@@ -2,8 +2,6 @@ FROM node:lts-alpine
 WORKDIR /usr/src/app
 COPY curriculum-front/package*.json ./
 RUN ls -l
-RUN npm cache clean --force
-RUN npm install --verbose
 RUN npm install
 COPY curriculum-front ./
 RUN ls -l
