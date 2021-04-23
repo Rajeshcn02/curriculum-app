@@ -25,6 +25,12 @@ jobs:
         repository: rajeshcn02/curriculum-back
         dockerfile: curriculum-back/Dockerfile
         tags: latest
+    
+    - name: Publish Build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: curriculum-back
+        path: ${{github.workspace}}/curriculum-back
 
   build-and-deploy-front:
     name: Build and Deploy Front-end
@@ -41,3 +47,9 @@ jobs:
         repository: rajeshcn02/curriculum-front
         dockerfile: curriculum-front/Dockerfile
         tags: latest
+  
+    - name: Publish Build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: curriculum-front
+        path: ${{github.workspace}}/curriculum-front
